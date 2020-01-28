@@ -30,7 +30,6 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
        final  ViewPager viewPager = findViewById(R.id.view_pager);
        final PagerAdapter adapter;
         adapter = new PagerAdapter(YourTasks.this,getSupportFragmentManager(),tabs.getTabCount());
@@ -62,7 +61,7 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 //            public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-//            }
+
 //        });
     }
 
