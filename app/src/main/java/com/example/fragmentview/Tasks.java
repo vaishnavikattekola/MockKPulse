@@ -1,14 +1,22 @@
 package com.example.fragmentview;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.time.Month;
+import java.util.Calendar;
 
 
 /**
@@ -19,7 +27,9 @@ import android.view.ViewGroup;
  * Use the {@link Tasks#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class Tasks extends Fragment {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,6 +43,7 @@ public class Tasks extends Fragment {
 
     public Tasks() {
         // Required empty public constructor
+
     }
 
     /**
@@ -66,8 +77,45 @@ public class Tasks extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tasks, container, false);
+         View view= inflater.inflate(R.layout.fragment_tasks, container, false);
+        Calendar calendar= Calendar.getInstance();
+        String currentDate= DateFormat.getDateInstance(DateFormat.MONTH_FIELD).format(calendar.getTime());
+        TextView mDate=view.findViewById(R.id.date);
+        mDate.setText(currentDate);
+       mDate.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               datepicker();
+           }
+       });
+        return view;
     }
+    private void datepicker(){
+        final TextView mDate= getView().findViewById(R.id.date);
+        final Calendar calendar = Calendar.getInstance();
+
+        int YEAR = calendar.get(Calendar.YEAR);
+        int MONTH = calendar.get(Calendar.MONTH);
+        int DATE = calendar.get(Calendar.DATE);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int date) {
+                String dateString = month + " " + date +" "+ year;
+                mDate.setText(dateString);
+                Calendar calendar1 = Calendar.getInstance();
+                calendar1.set(Calendar.YEAR,year);
+                calendar1.set(Calendar.MONTH,month);
+                calendar1.set(Calendar.DATE,date);
+
+                CharSequence dateCharSequence = android.text.format.DateFormat.format("MMM  d, yyyy",calendar1);
+                mDate.setText(dateCharSequence);
+
+            }
+        },YEAR,MONTH,DATE);
+        datePickerDialog.show();
+    }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

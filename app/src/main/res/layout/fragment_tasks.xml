@@ -1,16 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Tasks">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <!-- TODO: Update blank fragment layout -->
+<Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasks"
-        android:layout_centerInParent="true"
-        android:textSize="18dp"/>
+        android:id="@+id/task_count"
+        android:textColor="#ffffff"
+        android:text="Task Count"
+        android:gravity="left"
+        android:textAlignment="gravity">
 
-</RelativeLayout>
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:textColor="#ffffff"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:onClick="datePicker">
+
+    </TextView>
+
+</Toolbar>
+    <TextView
+        android:id="@+id/goals_for_week"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Goals for the week"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/add_goals"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Add a weekly goal"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/accomplish_today"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="What did you accomplish today?"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/toady_accomplishment"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Add toady's accomplishments"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tasks_resolved"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Tasks Resolved"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/resolved_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Add your resolved tasks"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/obstacles"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Any obstacles impending your tasks"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/obstacles_facing"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Add any obstacles you are facing"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/any_ideas"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Any innovation/ideas that needs management attention"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/your_ideas"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Your ideas/Innovation"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/any_awards"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Any Appreciation/Awards Recieved"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/awards"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Your Appreciation matters to us"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        />
+    <Button
+        android:id="@+id/btncreate_task"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:text="CREATE TASK"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp">
+
+    </Button>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</ScrollView>

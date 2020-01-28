@@ -8,11 +8,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.View;
+import android.widget.TextView;
 
 public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInteractionListener,Goals.OnFragmentInteractionListener,Overview.OnFragmentInteractionListener{
 
@@ -22,14 +24,25 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
         setContentView(R.layout.activity_your_tasks);
 
 
+        //arrow
+//        getSupportActionBar().setTitle(R.string.title_activity_your_tasks);
+//        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+//
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+//        toolbar.setDefaultDisplayHomeAsUpEnabled(true);
+
+        toolbar.setTitle(R.string.title_activity_your_tasks);
+
         TabLayout tabs= findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText(R.string.Tasks));
         tabs.addTab(tabs.newTab().setText(R.string.Goals));
         tabs.addTab(tabs.newTab().setText(R.string.Overview));
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+
        final  ViewPager viewPager = findViewById(R.id.view_pager);
        final PagerAdapter adapter;
         adapter = new PagerAdapter(YourTasks.this,getSupportFragmentManager(),tabs.getTabCount());

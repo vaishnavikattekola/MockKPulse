@@ -23,7 +23,8 @@
         <activity
             android:name=".YourTasks"
             android:label="@string/title_activity_your_tasks"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

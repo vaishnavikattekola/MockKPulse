@@ -1,4 +1,4 @@
-package com.example.fragmentview.ui.main;
+//package com.example.fragmentview.ui.main;
 //
 import android.content.Context;
 
