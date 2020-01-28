@@ -3,7 +3,7 @@ package com.example.fragmentview;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.example.fragmentview.ui.main.SectionsPagerAdapter;
+//import com.example.fragmentview.ui.main.SectionsPagerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -23,9 +23,9 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 
 
         TabLayout tabs= findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("Tasks"));
-        tabs.addTab(tabs.newTab().setText("Goals"));
-        tabs.addTab(tabs.newTab().setText("Overview"));
+        tabs.addTab(tabs.newTab().setText(R.string.Tasks));
+        tabs.addTab(tabs.newTab().setText(R.string.Goals));
+        tabs.addTab(tabs.newTab().setText(R.string.Overview));
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -61,7 +61,7 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 //            public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-
+//            }
 //        });
     }
 
