@@ -76,13 +76,12 @@ public class Overview extends Fragment {
         DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int date) {
-                String dateString = month+"";
-//                        + " " + date +" "+ year;
+                String dateString = month + " " + date +" "+ year;
                 mDate.setText(dateString);
                 Calendar calendar1 = Calendar.getInstance();
-//                calendar1.set(Calendar.YEAR,year);
+                calendar1.set(Calendar.YEAR,year);
                 calendar1.set(Calendar.MONTH,month);
-//                calendar1.set(Calendar.DATE,date);
+                calendar1.set(Calendar.DATE,date);
 
                 CharSequence dateCharSequence = android.text.format.DateFormat.format("MMMM",calendar1);
                 mDate.setText(dateCharSequence);
