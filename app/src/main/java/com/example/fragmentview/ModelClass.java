@@ -1,5 +1,5 @@
 package com.example.fragmentview;
-
+//Model class for the recyclerview of Goals
 public class ModelClass {
     private String today_goals;
 

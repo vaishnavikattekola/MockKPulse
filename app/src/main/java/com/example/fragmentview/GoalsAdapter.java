@@ -5,6 +5,7 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,13 +50,15 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         private TextView goals_text;
-
+        private Layout linear_layout;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             goals_text = itemView.findViewById(R.id.goals);
+//            linear_layout =itemView.findViewById(R.layout.fragment_goals);
+//            update_btn=itemView.findViewById(R.id.btn_updateGoal);
 
         }
     }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
     <Toolbar
         android:id="@+id/_toolbar"
         android:layout_width="match_parent"
@@ -13,7 +17,7 @@
             android:id="@+id/task_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end"
+            android:gravity="left"
             android:text="@string/tab_mark"
             android:textAlignment="gravity"
             android:textColor="#ffffff">
@@ -24,25 +28,41 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
+            android:gravity="right"
             android:textAlignment="gravity"
-            android:textColor="#ffffff">
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp">
 
         </TextView>
     </Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/_recyclerList"
-        android:scrollbars="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Goals">
-        <!-- TODO: Update blank fragment layout -->
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/_recyclerList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:context=".Goals">
+            <!-- TODO: Update blank fragment layout -->
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/btn_updateGoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="UPDATE GOAL"
+            android:textColor="#ffffff">
+        </Button>
+
+    </LinearLayout>
 
 
-    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
 
 

@@ -1,5 +1,6 @@
 package com.example.fragmentview;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,25 +10,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.DateFormat.Field;
+import java.util.Calendar;
+import java.util.Formatter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Overview.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Overview#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Overview extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -35,38 +28,69 @@ public class Overview extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Overview.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Overview newInstance(String param1, String param2) {
-        Overview fragment = new Overview();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overview, container, false);
+        View view = inflater.inflate(R.layout.fragment_overview, container, false);
+//        final RatingBar ratingBar;
+//        ratingBar=view.findViewById(R.id.rating_bar);
+//        ratingBar.setNumStars(5);
+//        ratingBar.getRating();
+//        ratingBar.setRating((float)4.5);
+
+
+//
+//            Formatter fmt=new Formatter();
+//
+//            fmt =new Formatter();
+//            fmt.format("%tB",calendar);
+
+        Calendar calendar= Calendar.getInstance();
+        CharSequence currentDate=android.text.format.DateFormat.format("MMMM",calendar);
+//        String currentDate=
+//                DateFormat.getDateInstance(DateFormat.MONTH_FIELD).format(calendar.getTime());
+        TextView mDate=view.findViewById(R.id.date);
+        mDate.setText(currentDate);
+
+        mDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                date_picker();
+            }
+        });
+
+        return view;
+    }
+
+
+
+    private void date_picker() {
+        final TextView mDate= getView().findViewById(R.id.date);
+        final Calendar calendar = Calendar.getInstance();
+
+        int YEAR = calendar.get(Calendar.YEAR);
+        int MONTH = calendar.get(Calendar.MONTH);
+        int DATE = calendar.get(Calendar.DATE);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int date) {
+                String dateString = month+"";
+//                        + " " + date +" "+ year;
+                mDate.setText(dateString);
+                Calendar calendar1 = Calendar.getInstance();
+//                calendar1.set(Calendar.YEAR,year);
+                calendar1.set(Calendar.MONTH,month);
+//                calendar1.set(Calendar.DATE,date);
+
+                CharSequence dateCharSequence = android.text.format.DateFormat.format("MMMM",calendar1);
+                mDate.setText(dateCharSequence);
+
+            }
+        },YEAR,MONTH,DATE);
+        datePickerDialog.show();
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -93,16 +117,6 @@ public class Overview extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

@@ -31,7 +31,8 @@
         android:id="@+id/date"
         android:textColor="#ffffff"
         android:gravity="end"
-        android:textAlignment="gravity">
+        android:textAlignment="gravity"
+        android:layout_marginRight="10dp">
 
     </TextView>
 
@@ -163,9 +164,5 @@
 
     </Button>
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>
 </ScrollView>
