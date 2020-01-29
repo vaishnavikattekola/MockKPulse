@@ -2,6 +2,7 @@ package com.example.fragmentview.Fragment_db;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.fragmentview.R;
+import com.example.fragmentview.YourTasks;
 
 public class HomeFragment_db extends Fragment {
     CardView cardView_kpulse_db;
@@ -48,6 +50,8 @@ public class HomeFragment_db extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"You clicked Kpulse",Toast.LENGTH_LONG).show();
+                Intent call_KPUlSE = new Intent(view.getContext(), YourTasks.class);
+                startActivity(call_KPUlSE);
             }
         });
 
