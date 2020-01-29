@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment_db.HomeFragment_db"
+    android:background="@color/dashboard_background"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    //First Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView_welcome"
+                            android:layout_height="100dp"
+                            android:layout_width="match_parent"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:padding="15dp">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/profile_image"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:src="@drawable/img_profile"
+                                        android:layout_gravity="center"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18dp"
+                                        android:text="Welcome!"
+                                        android:layout_gravity="left"
+                                        android:layout_marginTop="25dp"
+                                        android:textColor="@color/colorPrimaryDark"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="SANDEEP KUMAR"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold"
+                                        android:layout_gravity="left"
+                                        android:textColor="@color/unselected"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.Toolbar
+                                        android:layout_gravity="right|center"
+                                        android:layout_alignParentRight="true"
+                                        android:id="@+id/ab_nav_drawer"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        />
+
+
+                                    <!--                                    <ImageView-->
+<!--                                        android:id="@+id/btn_nav_drawer"-->
+<!--                                        android:clickable="true"-->
+<!--                                        android:layout_width="30dp"-->
+<!--                                        android:layout_height="30dp"-->
+<!--                                        android:layout_alignParentRight="true"-->
+<!--                                        android:layout_centerInParent="true"-->
+<!--                                        android:background="@drawable/ic_nav_drawer"-->
+<!--                                        android:layout_marginRight="30dp"/>-->
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    //Second Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="3dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_KL_ACADEMY"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_kl_academy"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="KL ACADEMY"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Learning management system for KL"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_KPULSE"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_kpulse"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="KPULSE"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Update your daily status"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    //Third Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="3dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_LEAVE_SYSTEM"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_calendar"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="LEAVE SYSTEM"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="View &amp; Manage your leaves"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_KL_FEEDBACK"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_feedback"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="KL FEEDBACK"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Submit your Feedback"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    //Fourth Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="3dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_GLENS_UTILITIES"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_glens_utilities"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="GLENS UTILITIES"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Various utilities developed for Glens"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_SUPPORT_LENS"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_support"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="SUPPORT LENS"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Manage support tickets for Glens"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    //Fifth Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="3dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_PRODUCT_PULSE"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_product_pulse"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="PRODUCT PULSE"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Manage task &amp; release for KL products"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_OUR_PRODUCTS"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_our_products"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="OUR PRODUCTS"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="All KnowledgeLens Products"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    //Sixth Row Card View Starts
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="3dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_KL_GITLAB"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_gitlab"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="KL GITLAB"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="GitLab code repository for KL"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_KL_DOCS"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_height="96dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="7dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_db_docs"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:alpha="0.5"/>
+
+                                <View
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_width="2dp"
+                                    android:layout_height="43dp"
+                                    android:background="@color/colorPrimary"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="KL DOCS"
+                                        android:layout_gravity="left"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/unselected"
+                                        android:layout_marginTop="16dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Repository for all documents in KL"
+                                        android:layout_gravity="left"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
