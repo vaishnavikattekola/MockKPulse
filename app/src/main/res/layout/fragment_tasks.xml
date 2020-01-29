@@ -151,6 +151,7 @@
         android:textSize="14sp"
         android:textStyle="italic"
         />
+
     <Button
         android:id="@+id/btncreate_task"
         android:layout_width="match_parent"
