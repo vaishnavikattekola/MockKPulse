@@ -15,6 +15,9 @@
     <string name="tab_mark">TASK COUNT</string>
     <!-- In Overview-->
     <string name="search_bar">Any Specific day(eg:April 25)</string>
+    <string name="weekly_goals">Goals for the week</string>
+    <string name="wvg_rating">Your Average Rating(110)</string>
+    <string name="btn_loadmore">Load More</string>
 
 
     <!-- -->

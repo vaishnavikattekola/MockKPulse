@@ -10,11 +10,11 @@
         android:id="@+id/goals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FDEDEC"
+        android:background="#ECF0F1"
         android:padding="16dp"
         android:text="@string/text"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:textSize="12sp">
     </TextView>
 
