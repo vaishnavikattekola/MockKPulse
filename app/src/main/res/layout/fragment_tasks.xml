@@ -44,15 +44,23 @@
         android:text="Goals for the week"
         android:textColor="#000"
         android:textSize="14sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/add_goals"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:hint="Add a weekly goal"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="14sp"
         android:textStyle="italic" />
 
@@ -62,35 +70,51 @@
         android:layout_height="40dp"
         android:text="What did you accomplish today?"
         android:textColor="#000"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/toady_accomplishment"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:hint="Add toady's accomplishments"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="14sp"
         android:textStyle="italic" />
 
     <TextView
         android:id="@+id/tasks_resolved"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="Tasks Resolved"
         android:textColor="#000"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/resolved_tasks"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:hint="Add your resolved tasks"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:textSize="14sp"
         android:textStyle="italic" />
 
@@ -98,6 +122,10 @@
         android:id="@+id/obstacles"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:text="Any obstacles impending your tasks"
         android:textColor="#000"
         android:textSize="14sp"
@@ -106,10 +134,14 @@
     <EditText
         android:id="@+id/obstacles_facing"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:hint="Add any obstacles you are facing"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:textSize="14sp"
         android:textStyle="italic" />
 
@@ -119,23 +151,35 @@
         android:layout_height="40dp"
         android:text="Any innovation/ideas that needs management attention"
         android:textColor="#000"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="14sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/your_ideas"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:layout_marginBottom="30dp"
         android:hint="Your ideas/Innovation"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:textSize="14sp"
         android:textStyle="italic" />
 
     <TextView
         android:id="@+id/any_awards"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:text="Any Appreciation/Awards Recieved"
         android:textColor="#000"
         android:textSize="14sp"
@@ -144,10 +188,14 @@
     <EditText
         android:id="@+id/awards"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:hint="Your Appreciation matters to us"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:textSize="14sp"
         android:textStyle="italic"
         />

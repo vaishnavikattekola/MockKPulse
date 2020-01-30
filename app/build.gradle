@@ -43,4 +43,8 @@ dependencies {
 
     //dependency for social login buttons
     implementation 'com.shaishavgandhi:login-buttons:0.1.1'
+    //dependecy for rating stars
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    //dependency for image view on button
+     implementation 'com.ornach.nobobutton:nobobutton:1.6'
 }
