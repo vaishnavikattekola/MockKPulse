@@ -38,4 +38,7 @@ dependencies {
 
     // dependency for circular profile pic
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //dependency for social login buttons
+    implementation 'com.shaishavgandhi:login-buttons:0.1.1'
 }

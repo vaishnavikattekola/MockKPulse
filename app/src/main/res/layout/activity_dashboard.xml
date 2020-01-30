@@ -23,7 +23,8 @@
             android:id="@+id/frame_db"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/btm_nav_view_db"/>
+            android:layout_above="@+id/btm_nav_view_db"
+            android:layout_marginBottom="-38dp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btm_nav_view_db"
