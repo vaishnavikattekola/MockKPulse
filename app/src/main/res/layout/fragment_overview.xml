@@ -43,13 +43,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:progressTint="#ffffff"
-                    android:progressBackgroundTint="@color/design_default_color_primary"
-                    android:backgroundTint="#ffffff00"
+                    android:progressBackgroundTint="#ffffff00"
                     android:isIndicator="true"
                     android:rating="4.5"
                     android:stepSize="0.5">
 
                 </RatingBar>
+
             </LinearLayout>
 
             <TextView
@@ -64,7 +64,6 @@
                 android:paddingBottom="5dp"
                 android:textAlignment="gravity"
                 android:textColor="#ffffff">
-
             </TextView>
         </LinearLayout>
     </Toolbar>
@@ -117,9 +116,8 @@
                 <View
                     android:id="@+id/SplitLine_hor1"
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:background="#99A3A4" />
+                    android:layout_height="1dp"
+                    android:layout_gravity="center" />
 
             </LinearLayout>
 
@@ -169,9 +167,9 @@
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#ffffff00"
                     android:progressTint="@color/colorPrimary"
                     android:rating="4"
-                    android:backgroundTint="#ffffff00"
                     android:secondaryProgressTint="@android:color/transparent"
                     android:stepSize="0.5">
 
@@ -214,8 +212,8 @@
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:progressTint="@color/colorPrimary"
                     android:backgroundTint="#ffffff00"
+                    android:progressTint="@color/colorPrimary"
                     android:rating="4"
                     android:secondaryProgressTint="@android:color/transparent"
                     android:stepSize="0.5">
@@ -403,9 +401,8 @@
                 <View
                     android:id="@+id/SplitLine_hor2"
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:background="#99A3A4" />
+                    android:layout_height="1dp"
+                    android:layout_gravity="center" />
 
             </LinearLayout>
 
@@ -660,7 +657,7 @@
             <TextView
                 android:id="@+id/daily_goals10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="93dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:background="#ECF0F1"
@@ -674,17 +671,28 @@
 
             </TextView>
 
+
             <Button
-                android:id="@+id/btnload_more"
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_height="50dp"
                 android:background="@color/colorPrimary"
-                android:paddingTop="20dp"
+                android:drawableRight="@drawable/ic_blackload"
+                android:gravity="center"
+
                 android:text="@string/btn_loadmore"
-                android:textColor="#ffffff"
-                android:textStyle="bold">
-            </Button>
+                android:textColor="@color/white" />
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btnload_more"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@color/colorPrimary"-->
+            <!--                android:paddingTop="20dp"-->
+            <!--                android:text="@string/btn_loadmore"-->
+            <!--                android:textColor="#ffffff"-->
+            <!--                android:textStyle="bold">-->
+            <!--            </Button>-->
         </LinearLayout>
     </ScrollView>
 
