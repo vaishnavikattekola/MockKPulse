@@ -49,7 +49,6 @@ public class HomeFragment_db extends Fragment {
         cardView_kpulse_db.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"You clicked Kpulse",Toast.LENGTH_LONG).show();
                 Intent call_KPUlSE = new Intent(view.getContext(), YourTasks.class);
                 startActivity(call_KPUlSE);
             }

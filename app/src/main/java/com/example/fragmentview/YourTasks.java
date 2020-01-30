@@ -23,17 +23,15 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_tasks);
 
-
-        //arrow
-//        getSupportActionBar().setTitle(R.string.title_activity_your_tasks);
-//        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-//
-
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-//        toolbar.setDefaultDisplayHomeAsUpEnabled(true);
-
-        toolbar.setTitle(R.string.title_activity_your_tasks);
+        toolbar.setTitle("Your Tasks");
+        toolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         TabLayout tabs= findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText(R.string.Tasks));
