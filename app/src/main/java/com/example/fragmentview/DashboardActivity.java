@@ -14,9 +14,11 @@ import com.example.fragmentview.Fragment_db.NotificationFragment_db;
 import com.example.fragmentview.Fragment_db.ProfileFragment_db;
 import com.example.fragmentview.Fragment_db.SettingsFragment_db;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class DashboardActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView btm_nav_view_db;
+    NavigationView navigation_Drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
         btm_nav_view_db.setOnNavigationItemSelectedListener(this);
         btm_nav_view_db.setSelectedItemId(R.id.db_home);
 
+
     }
 
     // creating instance for dashbboard fragments
@@ -34,6 +37,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
     ProfileFragment_db dbProfileFragment = new ProfileFragment_db();
     SettingsFragment_db dbSettingsFragment = new SettingsFragment_db();
     NotificationFragment_db dbNotificationFragments = new NotificationFragment_db();
+
 
 
     @Override
@@ -50,13 +54,13 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
                 return true;
 
             case R.id.db_settings:
-                DrawerLayout drawerLayout = findViewById(R.id.nav_drawer);
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_db,dbSettingsFragment).commit();
                 return true;
 
             case R.id.db_notification:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_db,dbNotificationFragments).commit();
                 return true;
+
         }
 
         return false;

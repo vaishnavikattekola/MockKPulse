@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".Fragment_db.SettingsFragment_db">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Settings Fragment" />
+        android:id="@+id/layout_relative">
+
+        <Button
+            android:id="@+id/btn_color_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color Picker"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
 
 </FrameLayout>

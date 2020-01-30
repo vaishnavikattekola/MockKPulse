@@ -24,6 +24,7 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
+                    android:id="@+id/layout_linear_db_top"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:orientation="vertical"
