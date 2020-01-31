@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -27,23 +28,14 @@ public class HomeFragment_db extends Fragment {
     CardView cardView_kpulse_db;
     DrawerLayout nav_drawer;
     ImageView btn_nav_drawer;
+    LinearLayout layout_linear_db_top;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_home_db, container, false);
 
         cardView_kpulse_db = view.findViewById(R.id.cardview_KPULSE);
         nav_drawer = view.findViewById(R.id.nav_drawer);
-//        btn_nav_drawer = view.findViewById(R.id.btn_nav_drawer);
-//        btn_nav_drawer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(!nav_drawer.isDrawerOpen(GravityCompat.START))
-//                    nav_drawer.openDrawer(GravityCompat.END);
-//                else
-//                    nav_drawer.closeDrawer(GravityCompat.END);
-//            }
-//        });
-
+        layout_linear_db_top = view.findViewById(R.id.layout_linear_db_top);
 
         //click function for KPULSE cardview
         cardView_kpulse_db.setOnClickListener(new View.OnClickListener() {

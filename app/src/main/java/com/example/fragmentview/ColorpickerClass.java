@@ -14,11 +14,12 @@ import yuku.ambilwarna.AmbilWarnaDialog;
 public class ColorpickerClass {
     Context context;
     int currentColor;
+    Window window;
     RelativeLayout relativeLayout;
     LinearLayout linearLayout;
-    Activity activity;
-    public void ColorPicker(Context context, RelativeLayout relativeLayout){
+    public void ColorPicker(Context context, RelativeLayout relativeLayout, Window window){
         this.context=context;
+        this.window = window;
         this.relativeLayout = relativeLayout;
         this.linearLayout = linearLayout;
         OpenColorPicker(false);
@@ -36,8 +37,8 @@ public class ColorpickerClass {
                 currentColor = color;
                 relativeLayout.setBackgroundColor(color);
 //                linearLayout.setBackgroundColor(color);
-//                win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//                win.setStatusBarColor(color);
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(color);
             }
         });
         dialog_colorPicker.show();
