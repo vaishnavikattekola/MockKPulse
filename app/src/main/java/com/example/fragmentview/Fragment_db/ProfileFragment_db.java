@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +28,9 @@ import com.google.android.gms.tasks.Task;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment_db extends Fragment {
-//    TextView txt_name;
-//    Button btn_signout;
+    TextView txt_name;
+    ImageView img_profiel_pic;
+    Button btn_signout;
     GoogleSignInClient mGoogleSignInClient;
 
     @Override
@@ -40,24 +42,24 @@ public class ProfileFragment_db extends Fragment {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
-//        txt_name = view.findViewById(R.id.txt_name);
-//        btn_signout = view.findViewById(R.id.btn_signout);
-//        btn_signout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()) {
-//                    case R.id.btn_signout:
-//                        signOut();
-//                        break;
-//                }
+        txt_name = view.findViewById(R.id.txt_profile_name);
+        btn_signout = view.findViewById(R.id.btn_sign_out);
+        btn_signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.btn_sign_out:
+                        signOut();
+                        break;
+                }
 
-//            }
-//        });
+            }
+        });
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
         if (acct != null) {
             String personName = acct.getDisplayName();
-//            txt_name.setText(personName);
+            txt_name.setText(personName);
         }
         return view;
 

@@ -25,8 +25,9 @@
 
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/layout_1_profile"
             android:layout_width="match_parent"
-            android:layout_height="350dp">
+            android:layout_height="320dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_id_profile"
@@ -35,18 +36,54 @@
                 android:src="@drawable/img_profile"
                 android:layout_centerInParent="true"
                 app:civ_border_width="5dp"
-                app:civ_border_color="@color/white"/>
+                app:civ_border_color="@color/white"
+                android:layout_above="@+id/txt_profile_name"/>
 
             <TextView
+                android:id="@+id/txt_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="USERNAME"
                 android:textStyle="bold"
                 android:textSize="24dp"
                 android:layout_alignParentBottom="true"
+                android:paddingTop="15dp"
                 android:paddingBottom="20dp"
                 android:layout_centerInParent="true"/>
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/layout_1_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_profile_id"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:cardCornerRadius="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Out"
+                android:layout_below="@+id/cardview_profile_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp" />
 
         </RelativeLayout>
 
