@@ -69,7 +69,7 @@ public class ProfileFragment_db extends Fragment {
                 .addOnCompleteListener((Activity) getContext(), new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(getContext(),"Sign out Successfully",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Signed out Successfully",Toast.LENGTH_LONG).show();
                         getActivity().finish();
                     }
                 });
