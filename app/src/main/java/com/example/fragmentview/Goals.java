@@ -1,5 +1,6 @@
 package com.example.fragmentview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -27,6 +30,7 @@ public class Goals extends Fragment {
 
 
     public Goals() {
+
 
     }
 
@@ -46,6 +50,7 @@ public class Goals extends Fragment {
         nDate.setText(currentDatee);
         return view;
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,9 +1,10 @@
 package com.example.fragmentview;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
-//import com.example.fragmentview.ui.main.SectionsPagerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -13,10 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
-public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInteractionListener,Goals.OnFragmentInteractionListener,Overview.OnFragmentInteractionListener{
+public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInteractionListener, Goals.OnFragmentInteractionListener, Overview.OnFragmentInteractionListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +38,24 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
             }
         });
 
-        TabLayout tabs= findViewById(R.id.tabs);
+        TabLayout tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText(R.string.Tasks));
         tabs.addTab(tabs.newTab().setText(R.string.Goals));
         tabs.addTab(tabs.newTab().setText(R.string.Overview));
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
-
-
-       final  ViewPager viewPager = findViewById(R.id.view_pager);
-       final PagerAdapter adapter;
-        adapter = new PagerAdapter(YourTasks.this,getSupportFragmentManager(),tabs.getTabCount());
+        final ViewPager viewPager = findViewById(R.id.view_pager);
+        final PagerAdapter adapter;
+        adapter = new PagerAdapter(YourTasks.this, getSupportFragmentManager(), tabs.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
         tabs.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                InputMethodManager imm = (InputMethodManager) getApplication().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(viewPager.getWindowToken(), 0);
+
             }
 
             @Override
@@ -62,19 +68,8 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 
             }
         });
-
-
-//        tabs.setupWithViewPager(viewPager);
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

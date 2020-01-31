@@ -12,7 +12,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public int mNoofTabs;
     Activity activity;
 
-    public PagerAdapter(Activity activity,FragmentManager fn, int NumberOfTabs) {
+    public PagerAdapter(Activity activity, FragmentManager fn, int NumberOfTabs) {
         super(fn);
         this.mNoofTabs = NumberOfTabs;
         this.activity = activity;
