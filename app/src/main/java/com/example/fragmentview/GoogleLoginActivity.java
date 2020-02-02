@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -68,11 +68,25 @@ public class GoogleLoginActivity extends AppCompatActivity{
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            if(completedTask.isSuccessful()){
+                //google fetch the login email address and verifiy the domain
+                GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+                String email = account.getEmail();
+                String[] split = email.split("@");
+                String domain = split[1]; //This Will Give You The Domain After '@'
+                if(domain.equals("knowledgelens.com"))
+                {
+                    Intent intent = new Intent(GoogleLoginActivity.this, DashboardActivity.class);
+                    startActivity(intent);
+                }
+                else
+                {
 
-            // Signed in successfully, show authenticated UI.
-            Intent intent = new Intent(GoogleLoginActivity.this, DashboardActivity.class);
-            startActivity(intent);
+                    //google doesnt sign in if the domain doesnt match
+                    Toast.makeText(GoogleLoginActivity.this, "User with this email doesn't exist", Toast.LENGTH_LONG).show();
+                    mGoogleSignInClient.signOut();
+                }
+            }
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
