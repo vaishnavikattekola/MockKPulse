@@ -89,6 +89,7 @@ public class Overview extends Fragment {
 
             }
         },YEAR,MONTH,DATE);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         datePickerDialog.show();
 
     }

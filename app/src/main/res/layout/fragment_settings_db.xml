@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragment_db.SettingsFragment_db">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <RelativeLayout
+        android:id="@+id/layout_relative"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/layout_relative">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_color_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Color Picker"
-            android:layout_centerInParent="true"/>
-
+            android:layout_marginLeft="10dp"
+            />
     </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginLeft="10dp">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="?attr/actionModeShareDrawable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="Share App" />
+            </LinearLayout>
+</LinearLayout>
 </FrameLayout>
+

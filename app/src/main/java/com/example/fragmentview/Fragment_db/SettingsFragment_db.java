@@ -24,13 +24,14 @@ import yuku.ambilwarna.AmbilWarnaDialog;
 
 public class SettingsFragment_db extends Fragment {
     Button btn_color_picker;
+
     int currentColor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_settings_db, container, false);
-        btn_color_picker = view.findViewById(R.id.btn_color_picker);
+       btn_color_picker = view.findViewById(R.id.btn_color_picker);
         final RelativeLayout layout_relative = view.findViewById(R.id.layout_relative);
         final LinearLayout layout_linear_db_top = view.findViewById(R.id.layout_linear_db_top);
         final Window win = getActivity().getWindow();

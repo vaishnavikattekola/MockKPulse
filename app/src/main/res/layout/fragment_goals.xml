@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear_goals"
+    android:orientation="vertical">
+<!--    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"-->
+<!--    app:behavior_hideable="true">-->
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:id="@+id/bottom_app_bar"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="@color/colorPrimary"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            app:navigationIcon="@android:drawable/ic_input_add"-->
+<!--            >-->
+<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -57,28 +78,32 @@
                     android:id="@+id/_recyclerList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:scrollbars="vertical"
                     tools:context=".Goals">
                     <!-- TODO: Update blank fragment layout -->
 
                 </androidx.recyclerview.widget.RecyclerView>
-
                 <Button
-                    android:id="@+id/btn_updateGoal"
+                    android:id="@+id/btn_Goals"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="UPDATE GOAL"
-                    android:textColor="#ffffff">
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/weekly_goals"
+                    android:textColor="@color/white"
+                    android:textAlignment="center">
 
                 </Button>
+
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
 </LinearLayout>
+
+
+</RelativeLayout>
 
 
 

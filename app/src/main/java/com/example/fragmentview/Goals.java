@@ -5,7 +5,9 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresPermission;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +17,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -27,6 +34,7 @@ public class Goals extends Fragment {
     View view;
     private RecyclerView recyclerView;
     private List<ModelClass> goalsData;
+
 
 
     public Goals() {
@@ -43,11 +51,12 @@ public class Goals extends Fragment {
         GoalsAdapter adapter = new GoalsAdapter(getContext(), goalsData);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-
+        //set current date
         Calendar calendar = Calendar.getInstance();
         String currentDatee = DateFormat.getDateInstance(DateFormat.MONTH_FIELD).format(calendar.getTime());
         TextView nDate = view.findViewById(R.id.date);
         nDate.setText(currentDatee);
+
         return view;
     }
 

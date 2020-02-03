@@ -23,6 +23,7 @@ import android.widget.TextView;
 public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInteractionListener, Goals.OnFragmentInteractionListener, Overview.OnFragmentInteractionListener {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
 
             }
         });
+
     }
 
 

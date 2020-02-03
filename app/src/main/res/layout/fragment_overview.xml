@@ -75,7 +75,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+         >
 
 
             <SearchView
@@ -87,6 +88,12 @@
 
             </SearchView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -670,17 +677,7 @@
                 android:textSize="12sp">
 
             </TextView>
-
-            <!--            <Button-->
-<!--                android:id="@+id/btnLogin"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:background="@color/colorPrimary"-->
-<!--                android:drawableRight="@drawable/ic_blackload"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/btn_loadmore"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/white" />-->
+        </LinearLayout>
 
             <RelativeLayout
                 android:clickable="true"

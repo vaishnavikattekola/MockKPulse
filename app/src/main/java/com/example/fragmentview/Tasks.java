@@ -6,6 +6,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
 
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.time.Month;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Tasks extends Fragment {
     Context context;
@@ -38,6 +40,8 @@ public class Tasks extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
+        //push the alyout up when keyboard appears
+        Objects.requireNonNull(getActivity()).getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         // for current date on toolbar
         Calendar calendar = Calendar.getInstance();
@@ -62,11 +66,13 @@ public class Tasks extends Fragment {
 
         int YEAR = calendar.get(Calendar.YEAR);
         int MONTH = calendar.get(Calendar.MONTH);
-        int DATE = calendar.get(Calendar.DATE);
-        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+        int DATE = calendar.get(Calendar.DAY_OF_MONTH);
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),R.style.Datepicker, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int date) {
                 String dateString = month + " " + date + " " + year;
+
+
                 mDate.setText(dateString);
                 Calendar calendar1 = Calendar.getInstance();
                 calendar1.set(Calendar.YEAR, year);
@@ -78,16 +84,10 @@ public class Tasks extends Fragment {
 
             }
         }, YEAR, MONTH, DATE);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         datePickerDialog.show();
     }
 
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -106,16 +106,7 @@ public class Tasks extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

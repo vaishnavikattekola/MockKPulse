@@ -57,9 +57,6 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
             super(itemView);
 
             goals_text = itemView.findViewById(R.id.goals);
-//            linear_layout =itemView.findViewById(R.layout.fragment_goals);
-//            update_btn=itemView.findViewById(R.id.btn_updateGoal);
-
         }
     }
 }
