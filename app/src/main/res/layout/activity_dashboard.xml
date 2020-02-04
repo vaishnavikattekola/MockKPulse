@@ -36,7 +36,9 @@
             app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Caption"
             app:itemTextAppearanceInactive="@style/TextAppearance.AppCompat.Caption"
             app:itemIconTint="@drawable/color_btn_nav_text"
-            app:itemTextColor="@drawable/color_btn_nav_text" />
+            app:itemTextColor="@drawable/color_btn_nav_text"
+            app:itemHorizontalTranslationEnabled="false"/>
+
 
     </RelativeLayout>
 

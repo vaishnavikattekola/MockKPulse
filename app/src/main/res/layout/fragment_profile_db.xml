@@ -60,6 +60,8 @@
                     android:layout_height="fill_parent"
                     android:layout_below="@+id/layout_1_profile">
 
+            </RelativeLayout>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardview_profile_id"
                         android:layout_width="match_parent"
@@ -67,6 +69,13 @@
                         app:cardCornerRadius="7dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_profile_id"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                app:cardCornerRadius="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
