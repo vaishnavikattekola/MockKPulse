@@ -14,7 +14,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
 
             <RelativeLayout
@@ -193,25 +194,18 @@
 
                     </androidx.cardview.widget.CardView>
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_below="@+id/layout_2_profile">
-
                     <Button
                         android:id="@+id/btn_sign_out"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sign out"
+                        android:text="Sign Out"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_below="@+id/cardview_profile_id"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
 
                 </RelativeLayout>
-
-            </RelativeLayout>
-
+        </RelativeLayout>
         </ScrollView>
 
     </RelativeLayout>
