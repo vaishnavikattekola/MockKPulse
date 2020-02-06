@@ -28,7 +28,7 @@ public class GoogleLoginActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_login);
-
+        onStart();
         btn_google_signin = findViewById(R.id.btn_google_signin);
         btn_google_signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +92,21 @@ public class GoogleLoginActivity extends AppCompatActivity{
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("error", "signInResult:failed code=" + e.getStatusCode());
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleSignInAccount alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if (alreadyloggedAccount != null) {
+            Toast.makeText(this, "Already Logged In", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(GoogleLoginActivity.this, DashboardActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+
         }
     }
 }
