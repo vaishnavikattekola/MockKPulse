@@ -38,6 +38,12 @@
     </TextView>
 
 </Toolbar>
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,8 +51,7 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
-        <!--        android:windowActionBarOverlay="true">-->
-        >
+
 
         <TextView
             android:id="@+id/goals_for_week"
@@ -110,7 +115,7 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/resolved_tasks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -206,12 +211,12 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btncreate_task"
+        android:id="@+id/btnsubmit_task"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
-        android:text="CREATE TASK"
+        android:text=" SUBMIT TASK"
         android:textStyle="bold"
         >
 

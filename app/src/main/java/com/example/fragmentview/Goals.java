@@ -21,19 +21,35 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.fragmentview.Retrofit.NetworkService;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.gson.JsonObject;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Goals extends Fragment {
+    GoogleSignInClient mGoogleSignInClient;
+    String personName;
+    String personEmail;
+
     private OnFragmentInteractionListener mListener;
     View view;
     private RecyclerView recyclerView;
-    private List<ModelClass> goalsData;
+    ModelClass modelClass;
+    private List<ModelClass.Status> goalsData;
+
 
 
 
@@ -48,14 +64,51 @@ public class Goals extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_goals, container, false);
         recyclerView = view.findViewById(R.id._recyclerList);
-        GoalsAdapter adapter = new GoalsAdapter(getContext(), goalsData);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(adapter);
+
+        //Google sign in options
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
+        GoogleSignInAccount accnt = GoogleSignIn.getLastSignedInAccount(getActivity());
+         personName = accnt.getDisplayName();
+         personEmail = accnt.getEmail();
+
         //set current date
         Calendar calendar = Calendar.getInstance();
         String currentDatee = DateFormat.getDateInstance(DateFormat.MONTH_FIELD).format(calendar.getTime());
         TextView nDate = view.findViewById(R.id.date);
         nDate.setText(currentDatee);
+
+
+        //retrofit Json parsing
+        JsonObject kpulse_data= new JsonObject();
+        kpulse_data.addProperty("name",personName);
+        kpulse_data.addProperty("email",personEmail);
+        kpulse_data.addProperty("startDate","01/03/2020");
+        kpulse_data.addProperty("endDate","02/05/2020");
+
+        Call<ModelClass> call= NetworkService.getApiService(getActivity()).getModelclass(kpulse_data);
+        call.enqueue(new Callback<ModelClass>() {
+            @Override
+            public void onResponse(Call<ModelClass> call, Response<ModelClass> response) {
+                Log.e("response","response is being received");
+                modelClass = response.body();
+
+                GoalsAdapter adapter = new GoalsAdapter(getContext(),modelClass.getStatus());
+                recyclerView.setAdapter(adapter);
+                goalsData=new ArrayList<>();
+            }
+            @Override
+            public void onFailure(Call<ModelClass> call, Throwable t) {
+                Log.e("error in respose",t.toString());
+
+
+            }
+        });
+
+
 
         return view;
     }
@@ -64,13 +117,8 @@ public class Goals extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        goalsData = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            goalsData.add(new ModelClass("Lorem ipsum dolor sit amet, consectetur adipiscing " +
-                    "elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-                    " Ut enim ad minim veniam, quis nostrud exercitation " +
-                    "ullamco laboris nisi ut aliquip ex ea commodo consequat."));
-        }
+
+
 
     }
 

@@ -2,6 +2,7 @@ package com.example.fragmentview;
 
 import android.content.Context;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,16 @@ import java.util.List;
 
 public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder>{
  Context mContext;
-    List<ModelClass>goalsData;
+ ModelClass modelClass;
+    List<ModelClass.Status>goalsData;
 
-    public GoalsAdapter(Context mContext, List<ModelClass> goalsData) {
+
+    public GoalsAdapter(Context mContext, List<ModelClass.Status> goalsData) {
         this.mContext = mContext;
         this.goalsData = goalsData;
+
     }
+
 
 
 
@@ -38,19 +43,19 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-    holder.goals_text.setText(goalsData.get(position).getToday_goals());
+    holder.goals_text.setText(goalsData.get(position).getWeeklyGoals());
 
     }
 
     @Override
     public int getItemCount() {
         return goalsData.size();
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         private TextView goals_text;
-        private Layout linear_layout;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -59,4 +64,5 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
             goals_text = itemView.findViewById(R.id.goals);
         }
     }
+
 }

@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Color Picker"
+            android:backgroundTint="#ffff"
             android:layout_marginLeft="10dp"
             />
     </RelativeLayout>
@@ -32,20 +33,88 @@
                 android:clickable="true"
                 android:layout_marginTop="10dp"
                 android:paddingRight="10dp"
-                android:layout_marginLeft="10dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="?attr/actionModeShareDrawable" />
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#ffff"
+                >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:text="Share App" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="?attr/actionModeShareDrawable" />
             </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#ffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Nigh mode">
+        </TextView>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="15dp"
+        android:id="@+id/switch_night"
+        >
+    </Switch>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Notification Sound">
+        </TextView>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            >
+        </Switch>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#ffff"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="Rate App" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="?attr/tickMark" />
+    </LinearLayout>
 </LinearLayout>
 </FrameLayout>
 

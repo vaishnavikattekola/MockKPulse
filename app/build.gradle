@@ -5,11 +5,17 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.fragmentview"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
     }
     buildTypes {
         release {
@@ -51,10 +57,21 @@ dependencies {
     //google play services
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     //Glide services
-    implementation('com.github.bumptech.glide:glide:4.11.0') {
-        exclude group: "com.android.support"
-    }
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation('com.github.bumptech.glide:glide:4.11.0')
+
+    //networkservices
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //gson conevertor nad retrofit
+    implementation'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+
+
+
+
 
 
 

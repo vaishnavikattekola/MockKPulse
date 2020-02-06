@@ -9,4 +9,11 @@
     <color name="dashboard_iconText">#7E7C7C</color>
     <color name="white">#ffffff</color>
     <color name="gray">#ECF0F1 </color>
+
+
+    <color name="colorPrimaryNight">#162026</color>
+    <color name="colorPrimaryDarkNight">#141d26</color>
+    <color name="colorAccentNight">#ffffff</color>
+    <color name="colorPrimaryTitle">#212121</color>
+    <color name="primaryTitleNight">#ffffff</color>
 </resources>

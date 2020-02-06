@@ -35,18 +35,6 @@ public class Overview extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_overview, container, false);
-//        final RatingBar ratingBar;
-//        ratingBar=view.findViewById(R.id.rating_bar);
-//        ratingBar.setNumStars(5);
-//        ratingBar.getRating();
-//        ratingBar.setRating((float)4.5);
-
-
-//
-//            Formatter fmt=new Formatter();
-//
-//            fmt =new Formatter();
-//            fmt.format("%tB",calendar);
 
         Calendar calendar= Calendar.getInstance();
         CharSequence currentDate=android.text.format.DateFormat.format("MMMM",calendar);
@@ -74,7 +62,7 @@ public class Overview extends Fragment {
         int YEAR = calendar.get(Calendar.YEAR);
         int MONTH = calendar.get(Calendar.MONTH);
         int DATE = calendar.get(Calendar.DATE);
-        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), R.style.Datepicker,new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int date) {
                 String dateString = month + " " + date +" "+ year;

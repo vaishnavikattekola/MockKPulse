@@ -42,7 +42,6 @@ public class ProfileFragment_db extends Fragment {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
-
         mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
         img_profile_pic = view.findViewById(R.id.img_id_profile);
         txt_name = view.findViewById(R.id.txt_profile_name);
