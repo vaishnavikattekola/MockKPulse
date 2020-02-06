@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GoogleLoginActivity">
+        <activity android:name="com.example.fragmentview.GoogleLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +22,16 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Fragment_db.RemainderBroadcast" />
+        <receiver android:name="com.example.fragmentview.Fragment_db.RemainderBroadcast" />
 
-        <activity android:name=".DashboardActivity">
+        <activity android:name="com.example.fragmentview.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.fragmentview.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,9 +39,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".YourTasks"
+            android:name="com.example.fragmentview.YourTasks"
             android:label="@string/title_activity_your_tasks"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.example.fragmentview.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

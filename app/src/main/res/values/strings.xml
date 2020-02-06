@@ -6,6 +6,7 @@
     <string name="Overview">Overview</string>
     <!-- in Task fragment-->
     <string name="date">date</string>
+    <string name="goals_for_week"> <u>"Add your Weekly Goals"</u></string>
     <!-- in goals_list-->
     <string name="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

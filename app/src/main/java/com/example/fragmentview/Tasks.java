@@ -1,15 +1,10 @@
 package com.example.fragmentview;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringDef;
-import androidx.annotation.StyleableRes;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -17,8 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.autofill.AutofillManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -34,9 +27,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.gson.JsonObject;
 
 import java.text.DateFormat;
-import java.time.Month;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -93,10 +84,15 @@ public class Tasks extends Fragment {
         CharSequence currentDate1 = android.text.format.DateFormat.format("MM/dd/yyyy", calendar);
         getdata(currentDate1.toString());
         {
-            spinner.setVisibility(View.VISIBLE);
+            view.findViewById(R.id.progressBar1).setVisibility(View.GONE);
+            view.findViewById(R.id.progressBar1).setVisibility(View.VISIBLE);
+            String message = "Be patient while Loading";
+            Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
         }
-        spinner.setVisibility(View.GONE);
 
+
+        view.findViewById(R.id.progressBar1).setVisibility(View.VISIBLE);
+        view.findViewById(R.id.progressBar1).setVisibility(View.GONE);
 
         // for current date on toolbar
         String currentDate = DateFormat.getDateInstance(DateFormat.MONTH_FIELD).format(calendar.getTime());
@@ -190,6 +186,11 @@ public class Tasks extends Fragment {
 
 
     private void getdata(String dateStr) {
+        spinner.setVisibility(View.GONE);
+        spinner.setVisibility(View.VISIBLE);
+        String message = "Be patient while Loading";
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
         JsonObject load_status = new JsonObject();
         //calling current date
 
@@ -204,9 +205,9 @@ public class Tasks extends Fragment {
             public void onResponse(Call<ModelClassLoad> call, Response<ModelClassLoad> response) {
                 try {
                     modelClassLoad = response.body();
-                    Log.e("WEEKLY GOALS", "your weekly goals are printed");
 
                     add_goals.setText(modelClassLoad.getWeeklyGoals());
+
                     Log.e("WEEKLY GOAL", modelClassLoad.getWeeklyGoals());
 
                     try {
@@ -215,15 +216,20 @@ public class Tasks extends Fragment {
                             Log.e("LOAD", modelClassLoad.getTaskToday());
                         } else {
                             todaystask.setText("Add Your Task");
-                        }//if loop for the tasks resolved
+                        }
+                        //if loop for the tasks resolved
                         try {
+//                            Calendar calendar= Calendar.getInstance();
+//                            String dayOfWeek = DateFormat.getDateInstance(DateFormat.DAY_OF_WEEK_FIELD).format(calendar.getTime());
+//
+//                            if (dayOfWeek.equalsIgnoreCase(Satuday|Sunday))
                             if (!modelClassLoad.getTaskResolved().isEmpty()) {
                                 Log.e("TASK RESOLVED", "you will get the message");
                                 reslovedtasks.setText(modelClassLoad.getTaskResolved());
                             }
 
                         } catch (Exception q) {
-                            reslovedtasks.setText("Need an update from backend");
+                            reslovedtasks.setText("Need an update from Back End");
 
 
                         }
@@ -257,7 +263,7 @@ public class Tasks extends Fragment {
                         }
                     } catch (Exception d) {
                         String message2 = "Today is a holiday";
-                        Toast.makeText(getActivity(), message2, Toast.LENGTH_SHORT);
+                        Toast.makeText(getActivity(), message2, Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     String message1 = " problem occured while loading";
@@ -273,7 +279,11 @@ public class Tasks extends Fragment {
             }
         });
 
+        spinner.setVisibility(View.VISIBLE);
+        spinner.setVisibility(View.GONE);
+
     }
+
 
 
     @Override

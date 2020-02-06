@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_db.NotificationFragment_db">
+    tools:context="com.example.fragmentview.Fragment_db.NotificationFragment_db">
 
     <!-- TODO: Update blank fragment layout -->
 

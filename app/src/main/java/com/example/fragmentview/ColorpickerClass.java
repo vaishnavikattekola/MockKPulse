@@ -1,7 +1,6 @@
 package com.example.fragmentview;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.Window;
 import android.view.WindowManager;

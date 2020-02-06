@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment_db.HomeFragment_db"
+    tools:context="com.example.fragmentview.Fragment_db.HomeFragment_db"
     android:background="@color/dashboard_background"
     android:orientation="vertical">
 

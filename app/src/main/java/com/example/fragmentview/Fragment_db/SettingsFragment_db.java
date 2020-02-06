@@ -1,8 +1,6 @@
 package com.example.fragmentview.Fragment_db;
 
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -10,17 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 
 import com.example.fragmentview.ColorpickerClass;
-import com.example.fragmentview.DashboardActivity;
 import com.example.fragmentview.R;
-
-import yuku.ambilwarna.AmbilWarnaDialog;
 
 
 public class SettingsFragment_db extends Fragment {

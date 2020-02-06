@@ -31,7 +31,7 @@
     <Toolbar
         android:id="@+id/_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
 
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:paddingRight="5dp"
-            android:text="@string/tab_mark"
+            android:text=""
             android:textAlignment="gravity"
             android:textColor="#ffffff">
 
@@ -81,7 +81,7 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:scrollbars="vertical"
-                    tools:context=".Goals">
+                    tools:context="com.example.fragmentview.Goals">
                     <!-- TODO: Update blank fragment layout -->
 
                 </androidx.recyclerview.widget.RecyclerView>
