@@ -37,14 +37,14 @@ import retrofit2.Response;
 public class Tasks extends Fragment {
     Context context;
     GoogleSignInClient mGoogleSignInClient;
-    String personName;
-    String personEmail;
+    private String personName;
+    private String personEmail;
 
     private OnFragmentInteractionListener mListener;
     ModelClass modelClass;
-    ModelClassLoad modelClassLoad;
-    TextView add_goals, reslovedtasks;
-    EditText todaystask, obstaclesfacing, yourIdeas, awardsAppreciation;
+     private ModelClassLoad modelClassLoad;
+    private TextView add_goals, reslovedtasks;
+     private EditText todaystask, obstaclesfacing, yourIdeas, awardsAppreciation;
     private ProgressBar spinner;
 
     public Tasks() {
@@ -126,7 +126,7 @@ public class Tasks extends Fragment {
                 tsk_data.addProperty("taskCompletion", "true");
                 tsk_data.addProperty("taskResolved", "");
                 tsk_data.addProperty("taskToday", " ");
-                tsk_data.addProperty("endDate", "02/05/2020");
+                tsk_data.addProperty("endDate", currentDate1.toString());
 
                 Call<JsonObject> call = NetworkService.getApiService(getActivity()).getCreateStatus(tsk_data);
                 call.enqueue(new Callback<JsonObject>() {

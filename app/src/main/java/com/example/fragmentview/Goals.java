@@ -74,13 +74,14 @@ public class Goals extends Fragment {
         TextView nDate = view.findViewById(R.id.date);
         nDate.setText(currentDatee);
 
-
+        CharSequence currentDate1 = android.text.format.DateFormat.format("MM/dd/yyyy", calendar);
+        Log.e("DATE FORMAT",currentDate1.toString());
         //retrofit Json parsing
         JsonObject kpulse_data = new JsonObject();
         kpulse_data.addProperty("name", personName);
         kpulse_data.addProperty("email", personEmail);
         kpulse_data.addProperty("startDate", "01/02/2020");
-        kpulse_data.addProperty("endDate", "02/05/2020");
+        kpulse_data.addProperty("endDate", currentDate1.toString());
 
         Call<ModelClass> call = NetworkService.getApiService(getActivity()).getModelclass(kpulse_data);
         call.enqueue(new Callback<ModelClass>() {
@@ -90,6 +91,7 @@ public class Goals extends Fragment {
 
                 GoalsAdapter adapter = new GoalsAdapter(getContext(), modelClass.getStatus());
                 recyclerView.setAdapter(adapter);
+
             }
 
             @Override
@@ -115,12 +117,14 @@ public class Goals extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        String startDate1 = status.getStartDate().toString();
+        Log.e("SORT","getting into loop");
         Collections.sort(goalsData, new Comparator<ModelClass.Status>() {
             DateFormat format = new SimpleDateFormat("MM/dd/yyy");
             @Override
             public int compare(ModelClass.Status o1, ModelClass.Status o2) {
                 try {
+                    Log.e("SORTING","In try catch");
+
 
                     return format.parse(o1.getStartDate()).compareTo(format.parse(o2.getStartDate()));
                 }catch (ParseException e){
@@ -128,6 +132,7 @@ public class Goals extends Fragment {
                 }
             }
         });
+        Log.e("SORTED","sorting is done");
     }
 
 
