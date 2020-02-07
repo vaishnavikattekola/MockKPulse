@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0a49b29-c484-4107-a72c-a8e8be38755f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../androidTest/java/com/example/fragmentview/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../androidTest/java/com/example/fragmentview/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/ColorpickerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/ColorpickerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/DashboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/DashboardActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/NotificationFragment_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/NotificationFragment_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/ProfileFragment_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/ProfileFragment_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/RemainderBroadcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/RemainderBroadcast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/SettingsFragment_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Fragment_db/SettingsFragment_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Goals.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Goals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/GoalsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/GoalsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/ModelClassLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/ModelClassLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/ModelOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/ModelOverview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Overview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/PagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/PagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/ApiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/ApiInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/NetworkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/WebRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Retrofit/WebRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Sharedpreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Sharedpreferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/Tasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/YourTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/YourTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/ui/main/PlaceholderFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/ui/main/PlaceholderFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/fragmentview/ui/main/SectionsPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/fragmentview/ui/main/SectionsPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_google_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_google_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_your_tasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_your_tasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_goals.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_goals.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_home_db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_home_db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_notification_db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_notification_db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_overview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_overview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_profile_db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_profile_db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_settings_db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_settings_db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_tasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_tasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values_night/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test/java/com/example/fragmentview/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test/java/com/example/fragmentview/ExampleUnitTest.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="653" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../.." />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0a49b29-c484-4107-a72c-a8e8be38755f" name="Default Changelist" comment="" />
+      <created>1580972175166</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580972175166</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32953104" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+</project>
