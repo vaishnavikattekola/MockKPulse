@@ -5,12 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 
 
 public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder>{
@@ -18,17 +15,11 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.MyViewHolder
  ModelClass modelClass;
     List<ModelClass.Status>goalsData;
 
-
     public GoalsAdapter(Context mContext, List<ModelClass.Status> goalsData) {
         this.mContext = mContext;
         this.goalsData = goalsData;
 
     }
-
-
-
-
-
 
     @NonNull
     @Override

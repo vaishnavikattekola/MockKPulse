@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -47,8 +48,13 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+
+                //push keyboard down when fragment changes
                 InputMethodManager imm = (InputMethodManager) getApplication().getSystemService(Activity.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(viewPager.getWindowToken(), 0);
+                String string_to_be_converted_to_MD5 = "Vaishnavi";
+                String MD5_Hash_String = Utils.CreateMD5(string_to_be_converted_to_MD5);
+                Log.e("HASHCODE",MD5_Hash_String);
 
             }
 
@@ -70,4 +76,6 @@ public class YourTasks extends AppCompatActivity implements Tasks.OnFragmentInte
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 }

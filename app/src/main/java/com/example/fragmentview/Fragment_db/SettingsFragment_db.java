@@ -29,7 +29,7 @@ public class SettingsFragment_db extends Fragment {
        btn_color_picker = view.findViewById(R.id.btn_color_picker);
        aSwitch=view.findViewById(R.id.switch_night);
         final RelativeLayout layout_relative = view.findViewById(R.id.layout_relative);
-        final LinearLayout layout_linear_db_top = view.findViewById(R.id.layout_linear_db_top);
+//        final LinearLayout layout_linear_db_top = view.findViewById(R.id.layout_linear_db_top);
         final Window win = getActivity().getWindow();
         btn_color_picker.setOnClickListener(new View.OnClickListener() {
             @Override

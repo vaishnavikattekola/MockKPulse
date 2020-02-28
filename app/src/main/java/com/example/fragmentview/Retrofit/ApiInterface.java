@@ -3,6 +3,8 @@ import com.example.fragmentview.ModelClass;
 import com.example.fragmentview.ModelClassLoad;
 import com.google.gson.JsonObject;
 
+import java.util.Calendar;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -14,7 +16,8 @@ public interface ApiInterface {
     Call<JsonObject> getCreateStatus(@Body JsonObject getCreateStatus);
     @POST("loadStatus")
     Call<ModelClassLoad> getModelclassLoad(@Body JsonObject getModelclassLoad);
-
+    @POST("updateGoalsForWeek")
+    Call<JsonObject> updateWeeklygoals(@Body JsonObject getUpdateWeeklyGoals);
 
 
 

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.fragmentview.Retrofit.NetworkService;
@@ -40,12 +41,20 @@ public class Goals extends Fragment {
     GoogleSignInClient mGoogleSignInClient;
     String personName;
     String personEmail;
+    TextView weeklyGoals;
+    Button btn_weeklysubmit;
 
     private OnFragmentInteractionListener mListener;
     View view;
     private RecyclerView recyclerView;
     ModelClass modelClass;
     ModelClass.Status status;
+    private Date dateTime;
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
     private List<ModelClass.Status> goalsData = new ArrayList<>();
 
     public Goals() {
@@ -75,14 +84,13 @@ public class Goals extends Fragment {
         nDate.setText(currentDatee);
 
         CharSequence currentDate1 = android.text.format.DateFormat.format("MM/dd/yyyy", calendar);
-        Log.e("DATE FORMAT",currentDate1.toString());
+        Log.e("DATE FORMAT", currentDate1.toString());
         //retrofit Json parsing
         JsonObject kpulse_data = new JsonObject();
         kpulse_data.addProperty("name", personName);
         kpulse_data.addProperty("email", personEmail);
         kpulse_data.addProperty("startDate", "01/02/2020");
         kpulse_data.addProperty("endDate", currentDate1.toString());
-
         Call<ModelClass> call = NetworkService.getApiService(getActivity()).getModelclass(kpulse_data);
         call.enqueue(new Callback<ModelClass>() {
             @Override
@@ -91,7 +99,6 @@ public class Goals extends Fragment {
 
                 GoalsAdapter adapter = new GoalsAdapter(getContext(), modelClass.getStatus());
                 recyclerView.setAdapter(adapter);
-
             }
 
             @Override
@@ -101,60 +108,73 @@ public class Goals extends Fragment {
 
             }
         });
+        Button btn_weeklysubmit = view.findViewById(R.id.btnsubmit_task);
+//        btn_weeklysubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                JsonObject goals_data = new JsonObject();
+//
+//                goals_data.addProperty("date","02/10/2020");
+//
+//
+//            }
+//        });
+//
+//
+//                Log.e("SORT", "getting into loop");
+//        try {
+//            Log.e("SORTING", "In try catch");
+//            Collections.sort(goalsData, new Comparator<ModelClass.Status>() {
+//                DateFormat format = new SimpleDateFormat("MM/dd/yyy");
+//
+//                @Override
+//                public int compare(ModelClass.Status o1, ModelClass.Status o2) {
+//
+//                    try {
+//                        Log.e("SORTED", "sorting is done");
+//
+//                        return format.parse(o1.getStartDate()).compareTo(format.parse(o2.getStartDate()));
+//
+//                    } catch (ParseException e) {
+//                        Log.e("CaTch ERROR", e.toString());
+//                        throw new IllegalArgumentException(e);
+//                    }
+//                }
+//            });
+//        } catch (Exception t) {
+//            Log.e("CATCH ERROR", t.toString());
+//        }
 
         return view;
     }
 
 
-    Comparator date_comparator = new Comparator() {
-        @Override
-        public int compare(Object o1, Object o2) {
-            return 0;
-        }
-    };
-
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("SORT","getting into loop");
-        Collections.sort(goalsData, new Comparator<ModelClass.Status>() {
-            DateFormat format = new SimpleDateFormat("MM/dd/yyy");
-            @Override
-            public int compare(ModelClass.Status o1, ModelClass.Status o2) {
-                try {
-                    Log.e("SORTING","In try catch");
 
 
-                    return format.parse(o1.getStartDate()).compareTo(format.parse(o2.getStartDate()));
-                }catch (ParseException e){
-                    throw new IllegalArgumentException(e);
-                }
-            }
-        });
-        Log.e("SORTED","sorting is done");
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
 
-                @Override
-                public void onAttach (Context context){
-                    super.onAttach(context);
-                    if (context instanceof OnFragmentInteractionListener) {
-                        mListener = (OnFragmentInteractionListener) context;
-                    } else {
-                        throw new RuntimeException(context.toString()
-                                + " must implement OnFragmentInteractionListener");
-                    }
-                }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
-                @Override
-                public void onDetach () {
-                    super.onDetach();
-                    mListener = null;
-                }
-
-                public interface OnFragmentInteractionListener {
-                    // TODO: Update argument type and name
-                    void onFragmentInteraction(Uri uri);
-                }
-            }
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+    }
+}

@@ -24,6 +24,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import java.text.DateFormat;
@@ -89,8 +90,6 @@ public class Tasks extends Fragment {
             String message = "Be patient while Loading";
             Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
         }
-
-
         view.findViewById(R.id.progressBar1).setVisibility(View.VISIBLE);
         view.findViewById(R.id.progressBar1).setVisibility(View.GONE);
 
@@ -112,21 +111,27 @@ public class Tasks extends Fragment {
             @Override
             public void onClick(View v) {
                 JsonObject tsk_data = new JsonObject();
-                tsk_data.addProperty("appreciation", "");
-                tsk_data.addProperty("delayedStatus", "false");
-                tsk_data.addProperty("email", personEmail);
-                tsk_data.addProperty("goalTomorrow", "");
-                tsk_data.addProperty("innovationOrIdea", "");
-                tsk_data.addProperty("message", "");
+
+
+                tsk_data.addProperty("startDate",currentDate1.toString());
                 tsk_data.addProperty("name", personName);
-                tsk_data.addProperty("pendingObstucles", "");
-                tsk_data.addProperty("ratedBy", "");
-                tsk_data.addProperty("reviews", "0");
-                tsk_data.addProperty("startDate", "01/02/2020");
-                tsk_data.addProperty("taskCompletion", "true");
+                tsk_data.addProperty("email", personEmail);
+                tsk_data.addProperty("taskToday",todaystask.getText().toString());
                 tsk_data.addProperty("taskResolved", "");
-                tsk_data.addProperty("taskToday", " ");
-                tsk_data.addProperty("endDate", currentDate1.toString());
+                tsk_data.addProperty("taskCompletion", "true");
+                tsk_data.addProperty("delayedStatus", "false");
+                tsk_data.addProperty("rating","0");
+                tsk_data.addProperty("reviews", "0");
+                tsk_data.addProperty("goalTomorrow", "");
+                tsk_data.addProperty("innovationOrIdea",yourIdeas.getText().toString());
+                tsk_data.addProperty("appreciation",awardsAppreciation.getText().toString());
+                tsk_data.addProperty("pendingObstucles", obstaclesfacing.getText().toString());
+
+                JsonArray tsk_ar=new JsonArray();
+                tsk_data.add("message",tsk_ar);
+                tsk_data.add("ratedBy",tsk_ar);
+
+
 
                 Call<JsonObject> call = NetworkService.getApiService(getActivity()).getCreateStatus(tsk_data);
                 call.enqueue(new Callback<JsonObject>() {
@@ -138,19 +143,23 @@ public class Tasks extends Fragment {
                         String message = rasp.get("message").getAsString();
 
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-                    }
+                        getdata(currentDate1.toString());{
+                            Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
 
+                        }
+                    }
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
-
+                        Log.e("API FAILED",t.toString());
                     }
                 });
             }
         });
 
-        return view;
 
+        return view;
     }
+
 
     //datepicker
     private void datepicker() {
@@ -164,20 +173,15 @@ public class Tasks extends Fragment {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int date) {
                 String dateString = month + " " + date + " " + year;
-
-
                 mDate.setText(dateString);
-
                 Calendar calendar1 = Calendar.getInstance();
                 calendar1.set(Calendar.YEAR, year);
                 calendar1.set(Calendar.MONTH, month);
                 calendar1.set(Calendar.DATE, date);
                 CharSequence currentDate2 = android.text.format.DateFormat.format("MM/dd/yyyy", calendar1);
                 getdata(currentDate2.toString());
-
                 CharSequence dateCharSequence = android.text.format.DateFormat.format("MMM  d, yyyy", calendar1);
                 mDate.setText(dateCharSequence);
-
             }
         }, YEAR, MONTH, DATE);
         datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
@@ -215,22 +219,22 @@ public class Tasks extends Fragment {
                             todaystask.setText(modelClassLoad.getTaskToday());
                             Log.e("LOAD", modelClassLoad.getTaskToday());
                         } else {
-                            todaystask.setText("Add Your Task");
+                            todaystask.setHint("Add Your Task now");
                         }
                         //if loop for the tasks resolved
+
                         try {
-//                            Calendar calendar= Calendar.getInstance();
-//                            String dayOfWeek = DateFormat.getDateInstance(DateFormat.DAY_OF_WEEK_FIELD).format(calendar.getTime());
-//
-//                            if (dayOfWeek.equalsIgnoreCase(Satuday|Sunday))
                             if (!modelClassLoad.getTaskResolved().isEmpty()) {
                                 Log.e("TASK RESOLVED", "you will get the message");
                                 reslovedtasks.setText(modelClassLoad.getTaskResolved());
                             }
+                            else {
+                                reslovedtasks.setHint("Need an update from Back End");
+                            }
 
                         } catch (Exception q) {
-                            reslovedtasks.setText("Need an update from Back End");
-
+                            Log.e("ERROR CATCH q",q.toString())
+;
 
                         }
                         //if loop for the ideas
@@ -239,8 +243,13 @@ public class Tasks extends Fragment {
                                 Log.e("IDEA", "you will get the ideas printed");
                                 yourIdeas.setText(modelClassLoad.getInnovationOrIdea());
                             }
+                            else {
+                                yourIdeas.setHint("Add Your Ideas/Innovation");
+
+                            }
                         } catch (Exception w) {
-                            yourIdeas.setText("Add Your Ideas/Innovation");
+                            Log.e("ERROR CATCH e",w.toString());
+
                         }
 
 
@@ -250,16 +259,17 @@ public class Tasks extends Fragment {
                                 Log.e("Awards", "you will get awards printed");
                                 awardsAppreciation.setText(modelClassLoad.getAppreciation());
                             }
-                        } catch (Exception e) {
-                            awardsAppreciation.setText("We are proud of YOU");
-                        }
+                            else {
+                                awardsAppreciation.setHint("We are proud of YOU");
+                            }
+                        } catch (Exception e) { Log.e("CATCH ERROR e",e.toString());}
                         //if loop for obstacles
                         if (!modelClassLoad.getPendingObstucles().isEmpty()) {
 
                             Log.e("Obstacles", "you will get Obstacles printed");
                             obstaclesfacing.setText(modelClassLoad.getPendingObstucles());
                         } else {
-                            obstaclesfacing.setText("Tell us if  you are worried");
+                            obstaclesfacing.setHint("Tell us if  you are worried");
                         }
                     } catch (Exception d) {
                         String message2 = "Today is a holiday";

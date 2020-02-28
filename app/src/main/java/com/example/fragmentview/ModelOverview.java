@@ -3,28 +3,28 @@ package com.example.fragmentview;
 import android.widget.RatingBar;
 
 public class ModelOverview {
-    public ModelOverview(String weeklyOverview, RatingBar ratingBar, String everydayOverview) {
-        this.weeklyOverview = weeklyOverview;
-        this.ratingBar = ratingBar;
-        this.everydayOverview = everydayOverview;
+    private String weeklygoalstext,dailygoalssubText;
+    private boolean isExpandable;
+
+    public ModelOverview(String weeklygoalstext, String dailygoalssubText, boolean isExpandable) {
+        this.weeklygoalstext = weeklygoalstext;
+        this.dailygoalssubText = dailygoalssubText;
+        this.isExpandable = isExpandable;
     }
 
-    private String weeklyOverview;
-    RatingBar ratingBar;
-    private String everydayOverview;
-
-    public String getWeeklyOverview() {
-        return weeklyOverview;
+    public String getWeeklygoalstext() {
+        return weeklygoalstext;
     }
 
-    public RatingBar getRatingBar() {
-        return ratingBar;
+    public String getDailygoalssubText() {
+        return dailygoalssubText;
     }
 
-    public String getEverydayOverview() {
-        return everydayOverview;
+    public boolean isExpandable() {
+        return isExpandable;
     }
 }
+
 
 
 
